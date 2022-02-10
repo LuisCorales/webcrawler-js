@@ -52,7 +52,7 @@ const url = 'https://news.ycombinator.com/';
             dataRow.push(tmp);
         }
 
-        return [dataRow, comment];
+        return [dataRow];
     });
 
     console.log(data);
