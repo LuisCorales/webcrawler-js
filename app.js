@@ -1,4 +1,5 @@
 const puppeteer = require('puppeteer');
+const fs = require('fs');
 
 const url = 'https://news.ycombinator.com/';
 
@@ -80,40 +81,32 @@ const allNews = scrapeData(url);
 
 const filterByComments = (async (objectsArray) => 
 {
-    const filteredData = await objectsArray;
-    const toReturn = [];
-    let max = 0;
-    let min = 99999;
+    let filteredData = [];
+    let toCheck = await objectsArray;
 
-    for (let i = 0; i < filteredData.length; i++) 
-    {
-        let title = filteredData[i].title;
-        //console.log(filteredData[i].title + " | " + filteredData[i].comments + " | " + filteredData[i].points);
+    // Get only the news with titles containing more than 5 words
+    toCheck = toCheck.filter(filterTitles);
+    console.log(toCheck);
 
-        // If the title has less than 6 words, then go to the next object
-        if (title.split(" ").length <= 5)
-        {
-            continue;
-        }
+    filteredData = toCheck.sort((a,b) => b.comments - a.comments)
 
-        console.log(filteredData[i]);
-        if(filteredData[i].commets > max)
-        {
-            toReturn.push(filteredData[i]);
-        }
-        else
-        {
-            
-        }
-    }
-
-    return toReturn;
+    return filteredData;
 });
 
 (async () => 
 {
-    console.log(await filterByComments(allNews));
-})();
+
+    console.log(await allNews);
+    const news = JSON.stringify(await allNews);
+    fs.writeFileSync("./data/news.json", news);
+
+    const newsFilteredByComments = JSON.stringify(await filterByComments(allNews));
+    fs.writeFileSync("./data/newsByComments.json", newsFilteredByComments)
+
+    const newsFilteredByComments = JSON.stringify(await filterByPoints(allNews));
+    fs.writeFileSync("./data/newsByComments.json", newsFilteredByComments)
+}
+)();
 
 const filterByPoints = (async (objectsArray) => 
 {
@@ -133,3 +126,12 @@ const filterByPoints = (async (objectsArray) =>
 
     //console.log(await objectsArray);
 });
+
+// Filters object titles by checking if it got more or less than 5 words
+function filterTitles(obj) 
+{
+    if (obj.title.split(" ").length > 5)
+        return true;
+    else
+        return false;
+}
