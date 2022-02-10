@@ -2,56 +2,56 @@
     {
         "order": 1,
         "title": "Show HN: EdgeDB 1.0",
-        "comments": 156,
-        "points": 340
+        "comments": 162,
+        "points": 357
     },
     {
         "order": 2,
-        "title": "Text is not the enemy: How illiterates use their mobile phones",
-        "comments": 52,
-        "points": 68
+        "title": "How illiterate people use their mobile phones (2012)",
+        "comments": 66,
+        "points": 72
     },
     {
         "order": 3,
         "title": "Case against OOP is understated, not overstated (2020)",
-        "comments": 8,
-        "points": 24
+        "comments": 21,
+        "points": 33
     },
     {
         "order": 4,
-        "title": "Twenty years of C# with Anders Hejlsberg [audio]",
-        "comments": 40,
-        "points": 64
+        "title": "Structured Procrastination (1995)",
+        "comments": 22,
+        "points": 105
     },
     {
         "order": 5,
-        "title": "Structured Procrastination (1995)",
-        "comments": 19,
-        "points": 101
+        "title": "Ray Tracing for the TI-84 CE",
+        "comments": 36,
+        "points": 170
     },
     {
         "order": 6,
-        "title": "Ray Tracing for the TI-84 CE",
-        "comments": 36,
-        "points": 168
+        "title": "Cloudflare announces fourth quarter and fiscal year 2021 financial results",
+        "comments": 32,
+        "points": 94
     },
     {
         "order": 7,
-        "title": "Cloudflare announces fourth quarter and fiscal year 2021 financial results",
-        "comments": 28,
-        "points": 88
+        "title": "Attacking an Ethereum L2 with Unbridled Optimism",
+        "comments": 85,
+        "points": 147
     },
     {
         "order": 8,
-        "title": "Attacking an Ethereum L2 with Unbridled Optimism",
-        "comments": 81,
-        "points": 145
+        "title": "An update on AirTag and unwanted tracking",
+        "comments": 91,
+        "points": 63
     },
     {
         "order": 9,
-        "title": "Betty Davis has died",
-        "comments": 25,
-        "points": 117
+        "title": "Twenty years of C# with Anders Hejlsberg [audio]",
+        "comments": 43,
+        "points": 66
     },
     {
         "order": 10,
@@ -61,122 +61,122 @@
     },
     {
         "order": 11,
-        "title": "An update on AirTag and unwanted tracking",
-        "comments": 83,
-        "points": 57
+        "title": "Betty Davis has died",
+        "comments": 27,
+        "points": 120
     },
     {
         "order": 12,
         "title": "Computer scientists prove why bigger neural networks do better",
         "comments": 104,
-        "points": 165
+        "points": 169
     },
     {
         "order": 13,
         "title": "Safer entropy accumulation in Linux 5.18's RNG",
-        "comments": 2,
-        "points": 20
+        "comments": 3,
+        "points": 23
     },
     {
         "order": 14,
-        "title": "A look inside the chips that powered the landmark Polaroid SX-70 instant camera",
-        "comments": 26,
-        "points": 88
+        "title": "France to Build Six New Nuclear Reactors",
+        "comments": 123,
+        "points": 238
     },
     {
         "order": 15,
-        "title": "France to Build Six New Nuclear Reactors",
-        "comments": 118,
-        "points": 223
+        "title": "A look inside the chips that powered the landmark Polaroid SX-70 instant camera",
+        "comments": 26,
+        "points": 89
     },
     {
         "order": 16,
-        "title": "Twitter misses ad revenue and user growth estimates",
-        "comments": 313,
-        "points": 158
+        "title": "Ask HN: What is your “I don't care if this succeeds” project?",
+        "comments": 50,
+        "points": 84
     },
     {
         "order": 17,
+        "title": "How the modern world arose from imaginary numbers",
+        "comments": 65,
+        "points": 25
+    },
+    {
+        "order": 18,
+        "title": "Twitter misses ad revenue and user growth estimates",
+        "comments": 316,
+        "points": 160
+    },
+    {
+        "order": 19,
         "title": "Everything Has Fresnel (2010)",
         "comments": 16,
         "points": 81
     },
     {
-        "order": 18,
-        "title": "Web hacking techniques of 2021",
-        "comments": 43,
-        "points": 455
-    },
-    {
-        "order": 19,
-        "title": "Show HN: A Schemaless Data Store Within Your SQL Database",
-        "comments": 8,
-        "points": 25
-    },
-    {
         "order": 20,
-        "title": "Back-end languages are coming to the front-end",
-        "comments": 260,
-        "points": 332
+        "title": "The Art World’s Spider Man",
+        "comments": 0,
+        "points": 7
     },
     {
         "order": 21,
-        "title": "Have we been thinking about inflation all wrong?",
-        "comments": 214,
-        "points": 61
+        "title": "Web hacking techniques of 2021",
+        "comments": 43,
+        "points": 459
     },
     {
         "order": 22,
-        "title": "Modern human incursion into Neanderthal territories 54k years ago at Mandrin",
-        "comments": 85,
-        "points": 105
+        "title": "Personal Stories about the TRS-80",
+        "comments": 46,
+        "points": 101
     },
     {
         "order": 23,
-        "title": "Theses on Sleep",
-        "comments": 54,
-        "points": 55
+        "title": "Show HN: A Schemaless Data Store Within Your SQL Database",
+        "comments": 12,
+        "points": 27
     },
     {
         "order": 24,
-        "title": "The Wason Selection Task",
-        "comments": 10,
-        "points": 19
+        "title": "Event-driven access to my home after a run",
+        "comments": 78,
+        "points": 110
     },
     {
         "order": 25,
-        "title": "Show HN: Makers.so – A website builder inside Figma",
-        "comments": 36,
-        "points": 149
+        "title": "Back-end languages are coming to the front-end",
+        "comments": 263,
+        "points": 334
     },
     {
         "order": 26,
-        "title": "I changed my mind about advertising",
-        "comments": 389,
-        "points": 195
+        "title": "Have we been thinking about inflation all wrong?",
+        "comments": 229,
+        "points": 65
     },
     {
         "order": 27,
-        "title": "MIPI CSI-2 v4.0 adds features always-on, low power machine vision applications",
-        "comments": 0,
-        "points": 20
+        "title": "Theses on Sleep",
+        "comments": 55,
+        "points": 58
     },
     {
         "order": 28,
-        "title": "New map of meaning in the brain changes ideas about memory",
-        "comments": 49,
-        "points": 161
+        "title": "Wordle Now Redirects to NYT",
+        "comments": 8,
+        "points": 18
     },
     {
         "order": 29,
-        "title": "Adipose-tissue plasticity in health and disease",
-        "comments": 0,
-        "points": 36
+        "title": "Modern human incursion into Neanderthal territories 54k years ago at Mandrin",
+        "comments": 85,
+        "points": 106
     },
     {
         "order": 30,
-        "title": "Wordle Now Redirects to NYT",
-        "comments": 4,
-        "points": 10
+        "title": "The Wason Selection Task",
+        "comments": 10,
+        "points": 19
     }
 ]

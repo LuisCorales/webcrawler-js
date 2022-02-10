@@ -86,7 +86,6 @@ const filterByComments = (async (objectsArray) =>
 
     // Get only the news with titles containing more than 5 words
     toCheck = toCheck.filter(filterTitles);
-    console.log(toCheck);
 
     filteredData = toCheck.sort((a,b) => b.comments - a.comments)
 
@@ -95,16 +94,14 @@ const filterByComments = (async (objectsArray) =>
 
 (async () => 
 {
-
-    console.log(await allNews);
     const news = JSON.stringify(await allNews);
     fs.writeFileSync("./data/news.json", news);
 
     const newsFilteredByComments = JSON.stringify(await filterByComments(allNews));
     fs.writeFileSync("./data/newsByComments.json", newsFilteredByComments)
 
-    const newsFilteredByComments = JSON.stringify(await filterByPoints(allNews));
-    fs.writeFileSync("./data/newsByComments.json", newsFilteredByComments)
+    //const newsFilteredByPoints = JSON.stringify(await filterByPoints(allNews));
+    //fs.writeFileSync("./data/newsByPoints-"+ Date.now + ".json", newsFilteredByPoints)
 }
 )();
 
