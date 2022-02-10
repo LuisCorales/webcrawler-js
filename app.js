@@ -1,5 +1,4 @@
 const puppeteer = require('puppeteer');
-const { stringify } = require('querystring');
 
 const url = 'https://news.ycombinator.com/';
 
@@ -18,7 +17,7 @@ const url = 'https://news.ycombinator.com/';
         const orderRows = [];
         for (let element of orderElements)
         {
-            orderRows.push(element.innerText);
+            orderRows.push(parseInt(element.innerText));
         }
 
         const titleRows = [];
@@ -30,16 +29,17 @@ const url = 'https://news.ycombinator.com/';
         const scoreRows = [];
         for (let element of scoreElements)
         {
-            scoreRows.push(element.innerText);
+            scoreRows.push(parseInt(element.innerText.split(" ")[0]));
         }
 
         const commentRows = [];
         for (let element of commentsElements)
         {
-            let text = element.lastElementChild.innerText.split(' ')[0];
-            let comment = isNaN(text) ? text : 0;
+            let text = element.lastElementChild.innerText.match(/\d+/g);
+            let comment = text != null ? parseInt(text[0]) : 0;
+
             commentRows.push(comment);
-        }
+        }   
 
         const dataRow = [];
         for (let i = 0; i < 30; i++) {
@@ -52,7 +52,7 @@ const url = 'https://news.ycombinator.com/';
             dataRow.push(tmp);
         }
 
-        return dataRow;
+        return [dataRow, comment];
     });
 
     console.log(data);
