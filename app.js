@@ -3,11 +3,16 @@ const fs = require('fs');
 
 const url = 'https://news.ycombinator.com/';
 
+/**
+ * Scrapes all the data of the specified URL. In this case, it works only for the Hacker News website.
+ * @param {string} url The website url
+ * @returns An array of objects of all the scraped data
+ */
 const scrapeData = (async (url) => 
 {
+    // Open the browser and go to the specified url
     const browser = await puppeteer.launch({headless: true});
     const page = await browser.newPage();
-
     await page.goto(url);
 
     const data = await page.evaluate(() => 
@@ -73,65 +78,63 @@ const scrapeData = (async (url) =>
 
     await browser.close();
 
-    // Return the objects array
+    // Return an array of objects
     return data;
 });
 
 const allNews = scrapeData(url);
 
-const filterByComments = (async (objectsArray) => 
+/**
+ * Filters the data of the array of objects obtained in the scrapeData function
+ * @param {*} objectsArray The array of objects of filtered data
+ * @param {bool} byPoints If true, filter titles with less or equal than 5 words and sort by points. If false, filter titles with more than 5 words and sort by comments.
+ * @returns An array of objects filtered by points or comments number
+ */
+const filterData = (async (objectsArray, byPoints) => 
 {
     let filteredData = [];
     let toCheck = await objectsArray;
 
-    // Get only the news with titles containing more than 5 words
-    toCheck = toCheck.filter(filterTitlesGT);
-
-    filteredData = toCheck.sort((a,b) => b.comments - a.comments)
-
-    return filteredData;
-});
-
-const filterByPoints = (async (objectsArray) => 
-{
-    let filteredData = [];
-    let toCheck = await objectsArray;
-
-    // Get only the news with titles containing more than 5 words
-    toCheck = toCheck.filter(filterTitlesLET);
-
-    filteredData = toCheck.sort((a,b) => b.points - a.points)
-
+    // Check if byPoints is true, meaning it will filter the data by its points
+    // otherwise, if false, it will filter the data by the number of comments
+    if(byPoints)
+    {
+        // Filters object titles by checking if it got more than 5 words
+        toCheck = toCheck.filter((obj) => {
+            if (obj.title.split(" ").length <= 5)
+                return true;
+            else
+                return false;
+        });
+        filteredData = toCheck.sort((a,b) => b.points - a.points);
+    }
+    else
+    {
+        // Filters object titles by checking if it got less or equal than 5 words
+        toCheck = toCheck.filter((obj) => {
+            if (obj.title.split(" ").length > 5)
+                return true;
+            else
+                return false;
+        });
+        filteredData = toCheck.sort((a,b) => b.comments - a.comments);
+    }
+    
     return filteredData;
 });
 
 (async () => 
 {
+    // Create a json file for all the news
     const news = JSON.stringify(await allNews);
     fs.writeFileSync("./data/news.json", news);
 
-    const newsFilteredByComments = JSON.stringify(await filterByComments(allNews));
-    fs.writeFileSync("./data/newsByComments.json", newsFilteredByComments)
+    // Create a json file for the news filtered by comments
+    const newsFilteredByComments = JSON.stringify(await filterData(allNews, false));
+    fs.writeFileSync("./data/newsByComments.json", newsFilteredByComments);
 
-    const newsFilteredByPoints = JSON.stringify(await filterByPoints(allNews));
-    fs.writeFileSync("./data/newsByPoints.json", newsFilteredByPoints)
+    // Create a json file for the news filtered by points
+    const newsFilteredByPoints = JSON.stringify(await filterData(allNews, true));
+    fs.writeFileSync("./data/newsByPoints.json", newsFilteredByPoints);
 }
 )();
-
-// Filters object titles by checking if it got more than 5 words
-function filterTitlesGT(obj) 
-{
-    if (obj.title.split(" ").length > 5)
-        return true;
-    else
-        return false;
-}
-
-// Filters object titles by checking if it got less or equal than 5 words
-function filterTitlesLET(obj) 
-{
-    if (obj.title.split(" ").length <= 5)
-        return true;
-    else
-        return false;
-}

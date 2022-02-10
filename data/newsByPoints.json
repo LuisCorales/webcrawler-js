@@ -1,62 +1,56 @@
 [
     {
-        "order": 21,
+        "order": 19,
         "title": "Web hacking techniques of 2021",
         "comments": 44,
-        "points": 460
+        "points": 463
     },
     {
-        "order": 1,
+        "order": 2,
         "title": "Show HN: EdgeDB 1.0",
-        "comments": 164,
-        "points": 366
+        "comments": 179,
+        "points": 407
     },
     {
-        "order": 12,
+        "order": 11,
         "title": "Betty Davis has died",
-        "comments": 28,
-        "points": 120
+        "comments": 30,
+        "points": 132
     },
     {
-        "order": 5,
+        "order": 9,
         "title": "Structured Procrastination (1995)",
-        "comments": 23,
-        "points": 107
+        "comments": 26,
+        "points": 117
     },
     {
-        "order": 23,
+        "order": 24,
         "title": "Personal Stories about the TRS-80",
-        "comments": 47,
-        "points": 101
+        "comments": 48,
+        "points": 104
     },
     {
-        "order": 19,
+        "order": 21,
         "title": "Everything Has Fresnel (2010)",
-        "comments": 16,
-        "points": 81
+        "comments": 17,
+        "points": 83
     },
     {
         "order": 28,
         "title": "Theses on Sleep",
-        "comments": 55,
-        "points": 59
+        "comments": 65,
+        "points": 65
     },
     {
-        "order": 27,
+        "order": 14,
         "title": "Wordle Now Redirects to NYT",
-        "comments": 9,
-        "points": 21
+        "comments": 43,
+        "points": 48
     },
     {
         "order": 30,
-        "title": "The Wason Selection Task",
-        "comments": 10,
-        "points": 20
-    },
-    {
-        "order": 22,
         "title": "The Art World’s Spider Man",
         "comments": 0,
-        "points": 7
+        "points": 8
     }
 ]
