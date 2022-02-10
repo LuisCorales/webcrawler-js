@@ -85,9 +85,22 @@ const filterByComments = (async (objectsArray) =>
     let toCheck = await objectsArray;
 
     // Get only the news with titles containing more than 5 words
-    toCheck = toCheck.filter(filterTitles);
+    toCheck = toCheck.filter(filterTitlesGT);
 
     filteredData = toCheck.sort((a,b) => b.comments - a.comments)
+
+    return filteredData;
+});
+
+const filterByPoints = (async (objectsArray) => 
+{
+    let filteredData = [];
+    let toCheck = await objectsArray;
+
+    // Get only the news with titles containing more than 5 words
+    toCheck = toCheck.filter(filterTitlesLET);
+
+    filteredData = toCheck.sort((a,b) => b.points - a.points)
 
     return filteredData;
 });
@@ -100,34 +113,24 @@ const filterByComments = (async (objectsArray) =>
     const newsFilteredByComments = JSON.stringify(await filterByComments(allNews));
     fs.writeFileSync("./data/newsByComments.json", newsFilteredByComments)
 
-    //const newsFilteredByPoints = JSON.stringify(await filterByPoints(allNews));
-    //fs.writeFileSync("./data/newsByPoints-"+ Date.now + ".json", newsFilteredByPoints)
+    const newsFilteredByPoints = JSON.stringify(await filterByPoints(allNews));
+    fs.writeFileSync("./data/newsByPoints.json", newsFilteredByPoints)
 }
 )();
 
-const filterByPoints = (async (objectsArray) => 
-{
-    const filteredData = [];
-
-    let max = 0;
-    let min = 99999;
-    for (let object in objectsArray) 
-    {
-        if (object.title.split(" ").length <= 5) 
-        {
-
-            console.log(object.title);
-            
-        }
-    }
-
-    //console.log(await objectsArray);
-});
-
-// Filters object titles by checking if it got more or less than 5 words
-function filterTitles(obj) 
+// Filters object titles by checking if it got more than 5 words
+function filterTitlesGT(obj) 
 {
     if (obj.title.split(" ").length > 5)
+        return true;
+    else
+        return false;
+}
+
+// Filters object titles by checking if it got less or equal than 5 words
+function filterTitlesLET(obj) 
+{
+    if (obj.title.split(" ").length <= 5)
         return true;
     else
         return false;
