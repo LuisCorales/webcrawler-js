@@ -10,6 +10,8 @@ Web crawler exercise to get data from [Hacker News](https://news.ycombinator.com
 - Filter all previous entries with less than or equal to five words in the title and sort them by points.
 - Store the 30 entries and both filters results in separate _.json_ files for further uses of the data.
 
+- Automated testing to check the scraped data is correct.
+
 ## Package dependency
 
 - [Puppeteer](https://pptr.dev/) →  Web crawler and scraping library
@@ -27,6 +29,17 @@ _Wait for the package installation._
 _Wait for the execution of the code to get the scraped data as_ .json _files.
 
 <sup>**NOTE**: Running the script will retrieve the most recent data of the website once. The data may change every now and then as other news get to the top.</sup>
+
+## How to test it?
+
+By using the next command, you can validate all the data scraped is correct:
+
+`npx jest tests/scrapedData.test.js`
+
+There are several validations running with each test:
+- Checks if it collects all 30 entries correctly.
+- Checks if the json files with all 30 entries, filtered by comments and filtered by points are written correctly.
+- Checks if every object of each file has the expected values (order, title. comments and points).
 
 # _How does it work?_
 
