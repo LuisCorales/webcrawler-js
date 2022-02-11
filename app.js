@@ -17,51 +17,35 @@ const scrapeData = (async (url) =>
 
     const data = await page.evaluate(() => 
     {
-        // Get all needed data elements
-        const orderElements = document.querySelectorAll('.athing .title .rank');
-        const titleElements = document.querySelectorAll('.athing .title a.titleLink');
-        const commentsElements = document.querySelectorAll('.subtext');
-        const pointsElements = document.querySelectorAll('.subtext .score')
-
+        const orderRows = [];
+        const titleRows = [];
+        const commentRows = [];
         const pointsRows = [];
+
+        // Get all needed data elements (order, title, comments, points)
+        document.querySelectorAll('.athing .title .rank').forEach((element) => orderRows.push(parseInt(element.innerText)));
+        document.querySelectorAll('.athing .title a.titleLink').forEach((element) => titleRows.push(element.innerText));
+        document.querySelectorAll('.subtext').forEach((element) => {
+            let text = element.lastElementChild.innerText.match(/\d+/g);
+            commentRows.push(text != null ? parseInt(text[0]) : 0);
+        });
+
+        const pointsElements = document.querySelectorAll('.subtext .score');  
 
         // If there is at least one news without points, then proceed to do another process
         if(pointsElements.length < 30)
         {
+            const infoText = document.querySelectorAll('.subtext');
             // Check each news to get its points info, if there are none, then add a 0. Else, just add the points number
-            for (let i = 0; i < commentsElements.length; i++) 
+            for (let i = 0; i < infoText.length; i++) 
             {
-                var numbersInInfo = commentsElements.item(i).innerText.match(/\d+/g);
+                let numbersInInfo = infoText.item(i).innerText.match(/\d+/g);
                 pointsRows.push(numbersInInfo.length < 2 ? 0 : parseInt(numbersInInfo[0]));
             }
         }
         else
-        {
-            for (let element of pointsElements)
-            {
-                pointsRows.push(parseInt(element.innerText.split(" ")[0]));
-            }
-        }
-        
-        const orderRows = [];
-        for (let element of orderElements)
-        {
-            orderRows.push(parseInt(element.innerText));
-        }
-
-        const titleRows = [];
-        for (let element of titleElements)
-        {
-            titleRows.push(element.innerText);
-        }
-
-        const commentRows = [];
-        for (let element of commentsElements)
-        {
-            let text = element.lastElementChild.innerText.match(/\d+/g);
-            commentRows.push(text != null ? parseInt(text[0]) : 0);
-        }   
-
+            pointsElements.forEach((element) => pointsRows.push(parseInt(element.innerText.split(" ")[0])));
+    
         // Create an object of each news
         const dataRow = [];
         for (let i = 0; i < 30; i++) {
@@ -79,7 +63,6 @@ const scrapeData = (async (url) =>
 
     await browser.close();
 
-    // Return an array of objects
     return data;
 });
 

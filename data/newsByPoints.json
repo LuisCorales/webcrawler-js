@@ -1,56 +1,50 @@
 [
     {
-        "order": 18,
-        "title": "Web hacking techniques of 2021",
-        "comments": 44,
-        "points": 465
-    },
-    {
-        "order": 2,
+        "order": 1,
         "title": "Show HN: EdgeDB 1.0",
-        "comments": 179,
-        "points": 412
+        "comments": 203,
+        "points": 497
     },
     {
-        "order": 11,
+        "order": 12,
         "title": "Betty Davis has died",
-        "comments": 30,
-        "points": 134
+        "comments": 32,
+        "points": 156
     },
     {
-        "order": 9,
+        "order": 15,
         "title": "Structured Procrastination (1995)",
-        "comments": 26,
-        "points": 118
-    },
-    {
-        "order": 24,
-        "title": "Personal Stories about the TRS-80",
-        "comments": 48,
-        "points": 104
-    },
-    {
-        "order": 21,
-        "title": "Everything Has Fresnel (2010)",
-        "comments": 17,
-        "points": 84
-    },
-    {
-        "order": 29,
-        "title": "Theses on Sleep",
-        "comments": 67,
-        "points": 66
-    },
-    {
-        "order": 14,
-        "title": "Wordle Now Redirects to NYT",
-        "comments": 49,
-        "points": 50
+        "comments": 31,
+        "points": 138
     },
     {
         "order": 26,
-        "title": "The Art World’s Spider Man",
+        "title": "Wordle Now Redirects to NYT",
+        "comments": 111,
+        "points": 96
+    },
+    {
+        "order": 23,
+        "title": "Everything Has Fresnel (2010)",
+        "comments": 22,
+        "points": 85
+    },
+    {
+        "order": 30,
+        "title": "Theses on Sleep",
+        "comments": 74,
+        "points": 72
+    },
+    {
+        "order": 24,
+        "title": "SSD Endurance",
+        "comments": 7,
+        "points": 14
+    },
+    {
+        "order": 21,
+        "title": "Graffiti Mobili",
         "comments": 0,
-        "points": 9
+        "points": 5
     }
 ]
