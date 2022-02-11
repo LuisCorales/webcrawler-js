@@ -1,50 +1,50 @@
 [
     {
-        "order": 1,
+        "order": 2,
         "title": "Show HN: EdgeDB 1.0",
-        "comments": 203,
-        "points": 497
+        "comments": 242,
+        "points": 606
     },
     {
-        "order": 12,
+        "order": 22,
         "title": "Betty Davis has died",
-        "comments": 32,
-        "points": 156
+        "comments": 42,
+        "points": 183
     },
     {
-        "order": 15,
+        "order": 27,
         "title": "Structured Procrastination (1995)",
-        "comments": 31,
-        "points": 138
+        "comments": 30,
+        "points": 158
     },
     {
-        "order": 26,
-        "title": "Wordle Now Redirects to NYT",
-        "comments": 111,
-        "points": 96
+        "order": 29,
+        "title": "Everything Has Fresnel (2010)",
+        "comments": 22,
+        "points": 89
     },
     {
         "order": 23,
-        "title": "Everything Has Fresnel (2010)",
-        "comments": 22,
-        "points": 85
+        "title": "SSD Endurance",
+        "comments": 17,
+        "points": 31
     },
     {
-        "order": 30,
-        "title": "Theses on Sleep",
-        "comments": 74,
-        "points": 72
+        "order": 8,
+        "title": "The Invention of Battlezone (1982)",
+        "comments": 15,
+        "points": 25
     },
     {
         "order": 24,
-        "title": "SSD Endurance",
-        "comments": 7,
-        "points": 14
+        "title": "Minolta X-700 Aperture Priority Mode",
+        "comments": 5,
+        "points": 12
     },
     {
-        "order": 21,
-        "title": "Graffiti Mobili",
+        "order": 5,
+        "title": "Testing Distributed Systems",
         "comments": 0,
-        "points": 5
+        "points": 7
     }
 ]
