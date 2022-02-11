@@ -22,4 +22,30 @@ const validateEntries = ((jsonData) => {
     }
 });
 
-module.exports = {validateJsonFiles, validateEntries};
+const validateData = ((jsonData1, jsonData2) => {
+    try {
+        // Checks every object of the json and returns true if it has order, title, comments and points
+        let data1 = JSON.parse(JSON.stringify(jsonData1));
+        data1.forEach((obj) => {
+            if(obj.order === undefined || obj.title == undefined 
+                || obj.comments === undefined || obj.points === undefined)
+                return false;
+        });
+
+        if(jsonData2 !== undefined)
+        {
+            let data2 = JSON.parse(JSON.stringify(jsonData2));
+            data2.forEach((obj) => {
+                if(obj.order === undefined || obj.title == undefined 
+                    || obj.comments === undefined || obj.points === undefined)
+                    return false;
+            });
+        }
+        return true;
+
+    } catch (e) {
+        return false
+    }
+})
+
+module.exports = {validateJsonFiles, validateEntries, validateData};
