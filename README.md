@@ -1,4 +1,4 @@
-# Web Crawler for Hacker News
+# Web Crawler for the Hacker News website
 
 Web crawler exercise to get data from [Hacker News](https://news.ycombinator.com/news) website using scraping techniques.
 
