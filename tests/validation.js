@@ -46,6 +46,41 @@ const validateData = ((jsonData1, jsonData2) => {
     } catch (e) {
         return false
     }
-})
+});
 
-module.exports = {validateJsonFiles, validateEntries, validateData};
+const validateIfSorted = ((jsonData, byPoints) => {
+    try {
+        // Checks every object of the filtered json files and returns true if it is sorted correctly
+        let data = JSON.parse(JSON.stringify(jsonData));
+
+        if(byPoints)
+        {
+            for(let i = 0, j = 1; i < data.length; i++ , j++)
+            {
+                if(j == data.length)
+                    break;
+                
+                if(data[i].points - data[j].points < 0) 
+                    return false;
+            }
+            return true;
+        }
+        else
+        {
+            for(let i = 0, j = 1; i < data.length; i++ , j++)
+            {
+                if(j == data.length)
+                    break;
+                
+                if(data[i].comments - data[j].comments < 0) 
+                    return false;
+            }
+            return true;
+        }
+
+    } catch(e) {
+        return false;
+    }
+});
+
+module.exports = {validateJsonFiles, validateEntries, validateData, validateIfSorted};

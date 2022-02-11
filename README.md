@@ -40,6 +40,7 @@ There are several validations running with each test:
 - Checks if it collects all 30 entries correctly.
 - Checks if the json files with all 30 entries, filtered by comments and filtered by points are written correctly.
 - Checks if every object of each file has the expected values (order, title. comments and points).
+- Checks if the filtered data is sorted correctly.
 
 # _How does it work?_
 

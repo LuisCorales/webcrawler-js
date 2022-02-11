@@ -1,50 +1,50 @@
 [
     {
-        "order": 2,
+        "order": 1,
         "title": "Show HN: EdgeDB 1.0",
-        "comments": 242,
-        "points": 606
+        "comments": 247,
+        "points": 620
     },
     {
-        "order": 22,
+        "order": 25,
         "title": "Betty Davis has died",
-        "comments": 42,
-        "points": 183
+        "comments": 41,
+        "points": 189
     },
     {
-        "order": 27,
+        "order": 30,
         "title": "Structured Procrastination (1995)",
         "comments": 30,
-        "points": 158
+        "points": 160
     },
     {
-        "order": 29,
-        "title": "Everything Has Fresnel (2010)",
-        "comments": 22,
-        "points": 89
+        "order": 19,
+        "title": "Starship Update [video]",
+        "comments": 142,
+        "points": 96
     },
     {
-        "order": 23,
+        "order": 26,
         "title": "SSD Endurance",
-        "comments": 17,
-        "points": 31
+        "comments": 23,
+        "points": 35
     },
     {
         "order": 8,
         "title": "The Invention of Battlezone (1982)",
-        "comments": 15,
-        "points": 25
-    },
-    {
-        "order": 24,
-        "title": "Minolta X-700 Aperture Priority Mode",
-        "comments": 5,
-        "points": 12
+        "comments": 17,
+        "points": 29
     },
     {
         "order": 5,
         "title": "Testing Distributed Systems",
         "comments": 0,
-        "points": 7
+        "points": 20
+    },
+    {
+        "order": 27,
+        "title": "Minolta X-700 Aperture Priority Mode",
+        "comments": 5,
+        "points": 14
     }
 ]

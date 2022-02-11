@@ -1,4 +1,4 @@
-const {validateJsonFiles, validateEntries, validateData} = require('./validation');
+const {validateJsonFiles, validateEntries, validateData, validateIfSorted} = require('./validation');
 const news = require('../data/news.json');
 const newsByComments = require('../data/newsByComments.json');
 const newsByPoints = require('../data//newsByPoints.json');
@@ -25,4 +25,12 @@ test("returns true if json by points is written correctly", () => {
 
 test("returns true if every object of the filtered json have all required data (order, title, comments, points)", () => {
     expect(validateData(newsByPoints, newsByComments)).toBe(true);
+});
+
+test("returns true if the news sorted by points are correctly sorted", () => {
+    expect(validateIfSorted(newsByPoints, true)).toBe(true);
+});
+
+test("returns true if the news sorted by comments are correctly sorted", () => {
+    expect(validateIfSorted(newsByComments, false)).toBe(true);
 });
