@@ -18,7 +18,7 @@ Web crawler exercise to get data from [Hacker News](https://news.ycombinator.com
 
 ## How to run it?
 
-Clone or download the code and just run the following command on the directory.
+Assuming you already have downloaded Node.JS and NPM: Clone or download the code and just run the following command on the directory.
 
 `npm install`
 
