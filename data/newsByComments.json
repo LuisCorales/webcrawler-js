@@ -1,87 +1,87 @@
 [
     {
-        "order": 20,
+        "order": 19,
         "title": "Twitter misses ad revenue and user growth estimates",
-        "comments": 324,
+        "comments": 325,
         "points": 173
     },
     {
         "order": 25,
         "title": "Back-end languages are coming to the front-end",
-        "comments": 272,
-        "points": 336
+        "comments": 274,
+        "points": 338
     },
     {
-        "order": 27,
+        "order": 28,
         "title": "Have we been thinking about inflation all wrong?",
-        "comments": 266,
+        "comments": 268,
         "points": 70
     },
     {
         "order": 3,
         "title": "An update on AirTag and unwanted tracking",
-        "comments": 152,
-        "points": 95
+        "comments": 156,
+        "points": 97
     },
     {
         "order": 16,
         "title": "France to Build Six New Nuclear Reactors",
-        "comments": 139,
-        "points": 282
-    },
-    {
-        "order": 8,
-        "title": "Computer scientists prove why bigger neural networks do better",
-        "comments": 108,
-        "points": 177
+        "comments": 145,
+        "points": 285
     },
     {
         "order": 7,
-        "title": "How illiterate people use their mobile phones (2012)",
-        "comments": 91,
-        "points": 83
+        "title": "Computer scientists prove why bigger neural networks do better",
+        "comments": 110,
+        "points": 177
     },
     {
-        "order": 29,
+        "order": 8,
+        "title": "How illiterate people use their mobile phones (2012)",
+        "comments": 93,
+        "points": 84
+    },
+    {
+        "order": 15,
+        "title": "Ask HN: What is your “I don't care if this succeeds” project?",
+        "comments": 89,
+        "points": 107
+    },
+    {
+        "order": 5,
+        "title": "Attacking an Ethereum L2 with Unbridled Optimism",
+        "comments": 88,
+        "points": 154
+    },
+    {
+        "order": 30,
         "title": "Modern human incursion into Neanderthal territories 54k years ago at Mandrin",
         "comments": 88,
         "points": 109
     },
     {
-        "order": 5,
-        "title": "Attacking an Ethereum L2 with Unbridled Optimism",
-        "comments": 87,
-        "points": 152
-    },
-    {
-        "order": 15,
-        "title": "Ask HN: What is your “I don't care if this succeeds” project?",
-        "comments": 87,
-        "points": 106
-    },
-    {
         "order": 1,
         "title": "Case against OOP is understated, not overstated (2020)",
-        "comments": 72,
-        "points": 80
+        "comments": 80,
+        "points": 85
     },
     {
-        "order": 22,
+        "order": 20,
         "title": "How the modern world arose from imaginary numbers",
         "comments": 68,
-        "points": 31
+        "points": 32
     },
     {
         "order": 13,
         "title": "Twenty years of C# with Anders Hejlsberg [audio]",
         "comments": 55,
-        "points": 74
+        "points": 77
     },
     {
         "order": 6,
         "title": "Cloudflare announces fourth quarter and fiscal year 2021 financial results",
         "comments": 44,
-        "points": 116
+        "points": 119
     },
     {
         "order": 4,
@@ -96,33 +96,33 @@
         "points": 93
     },
     {
-        "order": 26,
+        "order": 27,
         "title": "Show HN: A Schemaless Data Store Within Your SQL Database",
-        "comments": 15,
+        "comments": 16,
         "points": 29
     },
     {
         "order": 10,
         "title": "Safer entropy accumulation in Linux 5.18's RNG",
-        "comments": 6,
+        "comments": 7,
         "points": 31
     },
     {
-        "order": 18,
+        "order": 22,
         "title": "Turbulence Equations Discovered After Century-Long Quest",
         "comments": 1,
         "points": 17
+    },
+    {
+        "order": 23,
+        "title": "Australian spy agency disrupts foreign election interference",
+        "comments": 1,
+        "points": 11
     },
     {
         "order": 12,
         "title": "Qvin (YC W16) Is Hiring a Women's Health D2C Product Lead",
         "comments": 0,
         "points": 0
-    },
-    {
-        "order": 23,
-        "title": "Australian spy agency disrupts foreign election interference",
-        "comments": 0,
-        "points": 10
     }
 ]

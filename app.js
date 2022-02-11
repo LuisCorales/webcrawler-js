@@ -82,8 +82,6 @@ const scrapeData = (async (url) =>
     return data;
 });
 
-const allNews = scrapeData(url);
-
 /**
  * Filters the data of the array of objects obtained in the scrapeData function
  * @param {*} objectsArray The array of objects of filtered data
@@ -99,7 +97,7 @@ const filterData = (async (objectsArray, byPoints) =>
     // otherwise, if false, it will filter the data by the number of comments
     if(byPoints)
     {
-        // Filters object titles by checking if it got more than 5 words
+        // Filters object titles by checking if it have less or equal than 5 words
         toCheck = toCheck.filter((obj) => {
             if (obj.title.split(" ").length <= 5)
                 return true;
@@ -110,7 +108,7 @@ const filterData = (async (objectsArray, byPoints) =>
     }
     else
     {
-        // Filters object titles by checking if it got less or equal than 5 words
+        // Filters object titles by checking if it have more than 5 words
         toCheck = toCheck.filter((obj) => {
             if (obj.title.split(" ").length > 5)
                 return true;
@@ -123,8 +121,11 @@ const filterData = (async (objectsArray, byPoints) =>
     return filteredData;
 });
 
+// Just an auto executed function to run all functions
 (async () => 
 {
+    const allNews = scrapeData(url);
+
     // Create a json file for all the news
     const news = JSON.stringify(await allNews);
     fs.writeFileSync("./data/news.json", news);

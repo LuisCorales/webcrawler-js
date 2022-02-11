@@ -1,27 +1,27 @@
 [
     {
-        "order": 19,
+        "order": 18,
         "title": "Web hacking techniques of 2021",
         "comments": 44,
-        "points": 463
+        "points": 465
     },
     {
         "order": 2,
         "title": "Show HN: EdgeDB 1.0",
         "comments": 179,
-        "points": 407
+        "points": 412
     },
     {
         "order": 11,
         "title": "Betty Davis has died",
         "comments": 30,
-        "points": 132
+        "points": 134
     },
     {
         "order": 9,
         "title": "Structured Procrastination (1995)",
         "comments": 26,
-        "points": 117
+        "points": 118
     },
     {
         "order": 24,
@@ -33,24 +33,24 @@
         "order": 21,
         "title": "Everything Has Fresnel (2010)",
         "comments": 17,
-        "points": 83
+        "points": 84
     },
     {
-        "order": 28,
+        "order": 29,
         "title": "Theses on Sleep",
-        "comments": 65,
-        "points": 65
+        "comments": 67,
+        "points": 66
     },
     {
         "order": 14,
         "title": "Wordle Now Redirects to NYT",
-        "comments": 43,
-        "points": 48
+        "comments": 49,
+        "points": 50
     },
     {
-        "order": 30,
+        "order": 26,
         "title": "The Art World’s Spider Man",
         "comments": 0,
-        "points": 8
+        "points": 9
     }
 ]
