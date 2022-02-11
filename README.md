@@ -26,7 +26,7 @@ _Wait for the package installation._
 
 `npm run start`
 
-_Wait for the execution of the code to get the scraped data as_ .json_ files.
+_Wait for the execution of the code to get the scraped data as _.json_ files.
 
 <sup>**NOTE**: Running the script will retrieve the most recent data of the website once. The data may change every now and then as other news get to the top.</sup>
 
