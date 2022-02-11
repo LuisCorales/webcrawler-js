@@ -25,9 +25,10 @@ const scrapeData = (async (url) =>
 
         const pointsRows = [];
 
-        // If there is at least one news without scores, then proceed to do another process
+        // If there is at least one news without points, then proceed to do another process
         if(pointsElements.length < 30)
         {
+            // Check each news to get its points info, if there are none, then add a 0. Else, just add the points number
             for (let i = 0; i < commentsElements.length; i++) 
             {
                 var numbersInInfo = commentsElements.item(i).innerText.match(/\d+/g);
