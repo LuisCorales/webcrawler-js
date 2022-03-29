@@ -20,7 +20,6 @@ const scrapeData = (async (url) =>
         const orderRows = [];
         const titleRows = [];
         const commentRows = [];
-        const pointsRows = [];
 
         // Get all needed data elements (order, title, comments, points)
         document.querySelectorAll('.athing .title .rank').forEach((element) => orderRows.push(parseInt(element.innerText)));
@@ -30,35 +29,34 @@ const scrapeData = (async (url) =>
             commentRows.push(text != null ? parseInt(text[0]) : 0);
         });
 
-        const pointsElements = document.querySelectorAll('.subtext .score');  
+        const pointsElements = document.querySelectorAll('.subtext .score');
 
-        // If there is at least one news without points, then proceed to do another process
-        if(pointsElements.length < 30)
-        {
-            const infoText = document.querySelectorAll('.subtext');
-            // Check each news to get its points info, if there are none, then add a 0. Else, just add the points number
-            for (let i = 0; i < infoText.length; i++) 
-            {
-                let numbersInInfo = infoText.item(i).innerText.match(/\d+/g);
-                pointsRows.push(numbersInInfo.length < 2 ? 0 : parseInt(numbersInInfo[0]));
+        const getPointsRow = (pointsElements, row = []) => {
+            // If there is no news without points
+            if(pointsElements.length === 30) {
+                pointsElements.forEach((element) => row.push(parseInt(element.innerText.split(" ")[0])));
+                return row;
             }
-        }
-        else
-            pointsElements.forEach((element) => pointsRows.push(parseInt(element.innerText.split(" ")[0])));
-    
+
+            // If there is at least one news without points, then proceed to do another process
+            document.querySelectorAll('.subtext').forEach(element => {
+                let numbersInInfo = element.innerText.match(/\d+/g);
+                row.push(numbersInInfo.length < 2 ? 0 : parseInt(numbersInInfo[0]));
+            });
+
+            return row;
+        };
+
         // Create an object of each news
-        const dataRow = [];
-        for (let i = 0; i < 30; i++) {
-            const tmp = {};
-            tmp.order = orderRows[i];
-            tmp.title = titleRows[i];
-            tmp.comments = commentRows[i];
-            tmp.points = pointsRows[i];
+        const createNewsArray = (orderRows, titleRows, commentRows, pointsRows) => {
+            return orderRows.map((element, index) => {
+                return {order: element, title: titleRows[index], comments: commentRows[index], points: pointsRows[index]};
+            });
+        };
 
-            dataRow.push(tmp);
-        }
-
-        return dataRow;
+        const pointsRows = getPointsRow(pointsElements);
+        
+        return createNewsArray(orderRows, titleRows, commentRows, pointsRows);
     });
 
     await browser.close();
@@ -67,59 +65,46 @@ const scrapeData = (async (url) =>
 });
 
 /**
- * Filters the data of the array of objects obtained in the scrapeData function
+ * Filter titles with less or equal than 5 words and sort by points.
  * @param {*} objectsArray The array of objects of filtered data
- * @param {bool} byPoints If true, filter titles with less or equal than 5 words and sort by points. If false, filter titles with more than 5 words and sort by comments.
- * @returns An array of objects filtered by points or comments number
+ * @returns An array of objects filtered by points.
  */
-const filterData = (async (objectsArray, byPoints) => 
-{
-    let filteredData = [];
-    let toCheck = await objectsArray;
+const filterDataByPoints = (objectsArray => {
+    // Filters object titles by checking if it have less or equal than 5 words
+    objectsArray = objectsArray.filter((obj) => {
+        if (obj.title.split(" ").length <= 5) return true;
+        return false;
+    });
+    return objectsArray.sort((a,b) => b.points - a.points);
+});
 
-    // Check if byPoints is true, meaning it will filter the data by its points
-    // otherwise, if false, it will filter the data by the number of comments
-    if(byPoints)
-    {
-        // Filters object titles by checking if it have less or equal than 5 words
-        toCheck = toCheck.filter((obj) => {
-            if (obj.title.split(" ").length <= 5)
-                return true;
-            else
-                return false;
-        });
-        filteredData = toCheck.sort((a,b) => b.points - a.points);
-    }
-    else
-    {
-        // Filters object titles by checking if it have more than 5 words
-        toCheck = toCheck.filter((obj) => {
-            if (obj.title.split(" ").length > 5)
-                return true;
-            else
-                return false;
-        });
-        filteredData = toCheck.sort((a,b) => b.comments - a.comments);
-    }
-    
-    return filteredData;
+/**
+ * Filter titles with more than 5 words and sort by comments.
+ * @param {*} objectsArray The array of objects of filtered data.
+ * @returns An array of objects filtered by comments number.
+ */
+const filterDataByComments = (objectsArray => {
+    // Filters object titles by checking if it have more than 5 words
+    objectsArray = objectsArray.filter((obj) => {
+        if (obj.title.split(" ").length > 5) return true;
+        return false;
+    });
+    return objectsArray.sort((a,b) => b.comments - a.comments);
 });
 
 // Just an auto executed function to run all functions
-(async () => 
-{
-    const allNews = scrapeData(url);
+(async () => {
+    const allNews = await scrapeData(url);
 
     // Create a json file for all the news
-    const news = JSON.stringify(await allNews);
+    const news = JSON.stringify(allNews);
     fs.writeFileSync("./data/news.json", news);
 
     // Create a json file for the news filtered by comments
-    const newsFilteredByComments = JSON.stringify(await filterData(allNews, false));
+    const newsFilteredByComments = JSON.stringify(filterDataByComments(allNews));
     fs.writeFileSync("./data/newsByComments.json", newsFilteredByComments);
 
     // Create a json file for the news filtered by points
-    const newsFilteredByPoints = JSON.stringify(await filterData(allNews, true));
+    const newsFilteredByPoints = JSON.stringify(filterDataByPoints(allNews));
     fs.writeFileSync("./data/newsByPoints.json", newsFilteredByPoints);
-}
-)();
+})();
