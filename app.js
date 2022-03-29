@@ -1,5 +1,6 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs');
+const { parse } = require('path');
 
 const url = 'https://news.ycombinator.com/';
 
@@ -69,57 +70,41 @@ const scrapeData = (async (url) =>
 /**
  * Filters the data of the array of objects obtained in the scrapeData function
  * @param {*} objectsArray The array of objects of filtered data
- * @param {bool} byPoints If true, filter titles with less or equal than 5 words and sort by points. If false, filter titles with more than 5 words and sort by comments.
+ * @param {bool} byPoints If true, filter titles with less or equal than 5 words and sort by points. 
+ *  If false, filter titles with more than 5 words and sort by comments.
  * @returns An array of objects filtered by points or comments number
  */
-const filterData = (async (objectsArray, byPoints) => 
-{
-    let filteredData = [];
-    let toCheck = await objectsArray;
+const filterDataByPoints = (objectsArray => {
+    // Filters object titles by checking if it have less or equal than 5 words
+    objectsArray = objectsArray.filter((obj) => {
+        if (obj.title.split(" ").length <= 5) return true;
+        return false;
+    });
+    return objectsArray.sort((a,b) => b.points - a.points);
+});
 
-    // Check if byPoints is true, meaning it will filter the data by its points
-    // otherwise, if false, it will filter the data by the number of comments
-    if(byPoints)
-    {
-        // Filters object titles by checking if it have less or equal than 5 words
-        toCheck = toCheck.filter((obj) => {
-            if (obj.title.split(" ").length <= 5)
-                return true;
-            else
-                return false;
-        });
-        filteredData = toCheck.sort((a,b) => b.points - a.points);
-    }
-    else
-    {
-        // Filters object titles by checking if it have more than 5 words
-        toCheck = toCheck.filter((obj) => {
-            if (obj.title.split(" ").length > 5)
-                return true;
-            else
-                return false;
-        });
-        filteredData = toCheck.sort((a,b) => b.comments - a.comments);
-    }
-    
-    return filteredData;
+const filterDataByComments = (objectsArray => {
+    // Filters object titles by checking if it have more than 5 words
+    objectsArray = objectsArray.filter((obj) => {
+        if (obj.title.split(" ").length > 5) return true;
+        return false;
+    });
+    return objectsArray.sort((a,b) => b.comments - a.comments);
 });
 
 // Just an auto executed function to run all functions
-(async () => 
-{
-    const allNews = scrapeData(url);
+(async () => {
+    const allNews = await scrapeData(url);
 
     // Create a json file for all the news
-    const news = JSON.stringify(await allNews);
+    const news = JSON.stringify(allNews);
     fs.writeFileSync("./data/news.json", news);
 
     // Create a json file for the news filtered by comments
-    const newsFilteredByComments = JSON.stringify(await filterData(allNews, false));
+    const newsFilteredByComments = JSON.stringify(filterDataByComments(allNews));
     fs.writeFileSync("./data/newsByComments.json", newsFilteredByComments);
 
     // Create a json file for the news filtered by points
-    const newsFilteredByPoints = JSON.stringify(await filterData(allNews, true));
+    const newsFilteredByPoints = JSON.stringify(filterDataByPoints(allNews));
     fs.writeFileSync("./data/newsByPoints.json", newsFilteredByPoints);
-}
-)();
+})();
