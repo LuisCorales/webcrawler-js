@@ -1,1 +1,20 @@
-[{"order":5,"title":"Technicolor Tokyo","comments":37,"points":137},{"order":16,"title":"How to work with me","comments":79,"points":55},{"order":3,"title":"The YC Winter 2022 Batch","comments":11,"points":33},{"order":29,"title":"Rolling Rhino Remix","comments":8,"points":24},{"order":7,"title":"The Ecash Act","comments":9,"points":16}]
+[
+  { "order": 11, "title": "React v18.0", "comments": 86, "points": 285 },
+  { "order": 18, "title": "Technicolor Tokyo", "comments": 55, "points": 223 },
+  {
+    "order": 28,
+    "title": "How to work with me",
+    "comments": 150,
+    "points": 122
+  },
+  { "order": 9, "title": "GPT-3 can run code", "comments": 46, "points": 100 },
+  {
+    "order": 17,
+    "title": "The YC Winter 2022 Batch",
+    "comments": 68,
+    "points": 91
+  },
+  { "order": 24, "title": "Elan School", "comments": 29, "points": 84 },
+  { "order": 16, "title": "Go Fuzz Testing", "comments": 12, "points": 68 },
+  { "order": 2, "title": "Chrome 100", "comments": 16, "points": 46 }
+]

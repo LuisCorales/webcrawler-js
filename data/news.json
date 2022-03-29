@@ -1,1 +1,152 @@
-[{"order":1,"title":"Hackers Gaining Power of Subpoena via Fake “Emergency Data Requests”","comments":47,"points":115},{"order":2,"title":"Difftastic: A diff that understands syntax","comments":109,"points":389},{"order":3,"title":"The YC Winter 2022 Batch","comments":11,"points":33},{"order":4,"title":"Building a fullstack app with Flask and HTMx","comments":13,"points":45},{"order":5,"title":"Technicolor Tokyo","comments":37,"points":137},{"order":6,"title":"Altruism under stress: cortisol negatively predicts charitable giving","comments":63,"points":115},{"order":7,"title":"The Ecash Act","comments":9,"points":16},{"order":8,"title":"IP over Avian Carriers RFC 1149 event (2001)","comments":11,"points":28},{"order":9,"title":"Drift. A self-hostable open-source Gist clone","comments":4,"points":62},{"order":10,"title":"Debian decides to allow secret votes","comments":179,"points":191},{"order":11,"title":"Kaspersky is declared a US national security threat and is banned by the FCC","comments":90,"points":148},{"order":12,"title":"Show HN: Narratives Project – A news product for a more peaceful internet","comments":0,"points":5},{"order":13,"title":"MirageOS 4.0 – Self-managed internet infrastructure with unikernels","comments":27,"points":118},{"order":14,"title":"The Svix Webhook Service (YC W21) Is Hiring a Rust Back End Engineer (Remote)","comments":0,"points":0},{"order":15,"title":"My own phone number is now spam texting me","comments":206,"points":269},{"order":16,"title":"How to work with me","comments":79,"points":55},{"order":17,"title":"Ask HN: Why do search engines not let you blacklist spam domains?","comments":25,"points":45},{"order":18,"title":"Designer Diary: The Accidental Game Design of Hashi (2021)","comments":0,"points":9},{"order":19,"title":"Free coding exercises for budding gophers (2017)","comments":0,"points":24},{"order":20,"title":"I no longer grade my students’ work, and I wish I had stopped sooner","comments":85,"points":57},{"order":21,"title":"Linux: Vulnerabilities in nf_tables cause privilege escalation, information leak","comments":164,"points":255},{"order":22,"title":"Justice Stevens reads the fine print","comments":190,"points":228},{"order":23,"title":"We can do better than “same, but electric”","comments":442,"points":232},{"order":24,"title":"Mild respiratory SARS-CoV-2 infection can cause myelin loss in the brain","comments":23,"points":68},{"order":25,"title":"Why and how to start a startup serving emerging markets","comments":17,"points":43},{"order":26,"title":"New documents for the Okta breach","comments":50,"points":121},{"order":27,"title":"JEP 419: Foreign Function and Memory API","comments":43,"points":81},{"order":28,"title":"Ask HN: What is a modern Java environment?","comments":78,"points":60},{"order":29,"title":"Rolling Rhino Remix","comments":8,"points":24},{"order":30,"title":"Qubits based on FinFET at above 4 kelvin and use holes as spin qubits","comments":7,"points":43}]
+[
+  {
+    "order": 1,
+    "title": "Zulip 5.0: Threaded open-source team chat",
+    "comments": 26,
+    "points": 122
+  },
+  { "order": 2, "title": "Chrome 100", "comments": 16, "points": 46 },
+  {
+    "order": 3,
+    "title": "Hackers Gaining Power of Subpoena via Fake “Emergency Data Requests”",
+    "comments": 217,
+    "points": 322
+  },
+  {
+    "order": 4,
+    "title": "Difftastic: A diff that understands syntax",
+    "comments": 159,
+    "points": 623
+  },
+  {
+    "order": 5,
+    "title": "USWDS: The United States Web Design System",
+    "comments": 73,
+    "points": 197
+  },
+  {
+    "order": 6,
+    "title": "Implementing Cosine in C from Scratch (2020)",
+    "comments": 58,
+    "points": 100
+  },
+  {
+    "order": 7,
+    "title": "Visa's marketing opt-out has been down for over a week. Is this a legal issue?",
+    "comments": 75,
+    "points": 276
+  },
+  {
+    "order": 8,
+    "title": "Show HN: Search Engine for Blogs",
+    "comments": 16,
+    "points": 85
+  },
+  { "order": 9, "title": "GPT-3 can run code", "comments": 46, "points": 100 },
+  {
+    "order": 10,
+    "title": "FTC sues Intuit in bid to stop “deceptive” ads that claim TurboTax is free",
+    "comments": 27,
+    "points": 87
+  },
+  { "order": 11, "title": "React v18.0", "comments": 86, "points": 285 },
+  {
+    "order": 12,
+    "title": "LiquiFi (YC W22 – Carta for Web3) is hiring engineers",
+    "comments": 0,
+    "points": 0
+  },
+  {
+    "order": 13,
+    "title": "Building a fullstack app with Flask and HTMx",
+    "comments": 84,
+    "points": 135
+  },
+  {
+    "order": 14,
+    "title": "$625M worth of ETH drained on Axie Infinity's Ronin Network",
+    "comments": 429,
+    "points": 337
+  },
+  {
+    "order": 15,
+    "title": "Converting integers to decimal strings faster with AVX-512",
+    "comments": 28,
+    "points": 40
+  },
+  { "order": 16, "title": "Go Fuzz Testing", "comments": 12, "points": 68 },
+  {
+    "order": 17,
+    "title": "The YC Winter 2022 Batch",
+    "comments": 68,
+    "points": 91
+  },
+  { "order": 18, "title": "Technicolor Tokyo", "comments": 55, "points": 223 },
+  {
+    "order": 19,
+    "title": "Sergey Brin: The Facebook phenomenon is a problem (2007)",
+    "comments": 12,
+    "points": 36
+  },
+  {
+    "order": 20,
+    "title": "Altruism under stress: cortisol negatively predicts charitable giving",
+    "comments": 101,
+    "points": 169
+  },
+  {
+    "order": 21,
+    "title": "Show HN: Narratives Project – A news product for a more peaceful internet",
+    "comments": 28,
+    "points": 49
+  },
+  {
+    "order": 22,
+    "title": "Sorbet: Stripe's Type Checker for Ruby",
+    "comments": 2,
+    "points": 25
+  },
+  {
+    "order": 23,
+    "title": "GraphQL is now available on Supabase",
+    "comments": 16,
+    "points": 56
+  },
+  { "order": 24, "title": "Elan School", "comments": 29, "points": 84 },
+  {
+    "order": 25,
+    "title": "The user experience problems of quadratic voting",
+    "comments": 54,
+    "points": 118
+  },
+  {
+    "order": 26,
+    "title": "IP over Avian Carriers RFC 1149 event (2001)",
+    "comments": 28,
+    "points": 63
+  },
+  {
+    "order": 27,
+    "title": "Kaspersky is declared a US national security threat and is banned by the FCC",
+    "comments": 294,
+    "points": 359
+  },
+  {
+    "order": 28,
+    "title": "How to work with me",
+    "comments": 150,
+    "points": 122
+  },
+  {
+    "order": 29,
+    "title": "Drift. A self-hostable open-source Gist clone",
+    "comments": 15,
+    "points": 93
+  },
+  {
+    "order": 30,
+    "title": "Ask HN: Why do search engines not let you blacklist spam domains?",
+    "comments": 83,
+    "points": 136
+  }
+]
